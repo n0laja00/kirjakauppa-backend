@@ -1,6 +1,6 @@
 <?php
 
-function openDB() {
+function opendb() {
     $dbname="kirjakauppa";
     
     $db = new PDO ("mysql:host=localhost;dbname=$dbname", "root", "");

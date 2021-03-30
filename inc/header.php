@@ -1,11 +1,11 @@
-<?php
-header('Access-Control_allow_origin: http://localhost:3000');
-header('Access-Control-Allow-Credentials: true'); 
-header('Access-Control-Allow-methods: POST, GET, OPTIONS, DELETE');
-header('Access-Control-Allow-Headers: Accept, content-Type, Access-Control-Allow-Header'); 
-header('Content-type: application/json');
+<?php 
+header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Methods: POST, OPTIONS');
+header('Access-Control-Allow-Headers: Accept, Content-Type, Access-Control-Allow-Header');
+header('Content-type: application/json'); /*En tiedä haittaako toimivuutta */
 header('Access-Control-Max-Age: 3600');
 
-if ($_server['REQUEST_METHOD'] === 'options') {
-    return 0;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'options') {
+    return 0; 
+}; 
