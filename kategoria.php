@@ -1,7 +1,7 @@
 <?php
 
 require_once 'inc/functions.php';
-require
+require_once 'inc/headers.php';
 
 
 
