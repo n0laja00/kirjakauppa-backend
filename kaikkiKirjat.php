@@ -5,10 +5,19 @@ require_once 'inc/headers.php';
 
 try{
     $db=opendb();
-    jsonFactory($db,"select * from kirja");
-    jsonFactory($db,"select * from kirjailija");
-    jsonFactory($db,"select * from julkaisija");
-
+    jsonFactory($db,"select DISTINCT(kirjaNimi), sivuNro, hinta, kuvaus, julkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
+    from kirja
+        inner join kirjakategoria
+            on kirja.kirjaNro = kirjakategoria.kirjaNro
+        inner join kategoria
+            on kirjakategoria.kategoriaNro = kategoria.kategoriaNro
+        inner join julkaisija
+            on kirja.julkaisijaNro = julkaisija.julkaisijaNro
+        inner join kirjailijakirja
+            on kirja.kirjaNro = kirjailijakirja.kirjaNro
+        inner join kirjailija
+            on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
+    GROUP BY kirjaNimi");
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 }
