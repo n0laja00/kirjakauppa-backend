@@ -13,7 +13,6 @@ $parametrit = explode('/',$url);
 // kategoria on ensimmäinen parametri,joka seuraa osoitteen jälkeen ja eroteltu: /
 $kirjakategoria_id=$url[1];
 
-echo ("test");
 
 
 try {
