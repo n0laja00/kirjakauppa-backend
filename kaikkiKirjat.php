@@ -11,9 +11,8 @@ try{
     $result = $query->fetchAll(PDO::FETCH_ASSOC); 
 
     
-    print_r($result);
     header('http/1.1 200 OK');
-    echo json_encode($result); 
+    echo json_encode($result, JSON_PRETTY_PRINT); 
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 }
