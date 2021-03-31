@@ -7,7 +7,7 @@ try{
     $db=opendb();
     jsonFactory($db,"select * from kirja");
     jsonFactory($db,"select * from kirjailija");
-    jsonFactory($db,"select * from jurlkaisija");
+    jsonFactory($db,"select * from julkaisija");
 
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
