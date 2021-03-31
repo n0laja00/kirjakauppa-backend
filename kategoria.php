@@ -1,7 +1,7 @@
 <?php
 
 require_once 'inc/functions.php';
-
+require
 
 
 
@@ -18,7 +18,7 @@ echo ("test");
 
 try {
     $db = opendb();
-    $query=jsonFactory($db,"select * from kirjakategoria where kategoriaNro = $kirjakategoria_id");
+    jsonFactory($db,"select * from kirjakategoria where kategoriaNro = $kirjakategoria_id");
 
 } catch (PDOException $pdoex) {
     returnError($pdoex);
