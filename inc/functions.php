@@ -1,5 +1,6 @@
 <?php
 
+
 function opendb() {
     $dbname="kirjakauppa";
     
@@ -14,3 +15,11 @@ function returnError(PDOException $pdoex) {
     echo json_encode($error); 
     exit;
 };
+
+
+function jsonFactory(object $db, string $sql): void {
+    $query = $db->query($sql);
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+    header('http/1.1 200 OK');
+    echo json_encode($results, JSON_PRETTY_PRINT); 
+}
