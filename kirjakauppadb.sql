@@ -334,7 +334,7 @@ values ('Emily F.', 'Crowford');
 
 INSERT into kirjailijakirja (kirjailijaNro, kirjaNro) 
 
-values (1,2), (2,2), (2,3), (1,4), (1,4); 
+values (1,1), (2,2), (2,3), (1,4), (1,5); 
 
  
 

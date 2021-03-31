@@ -6,6 +6,8 @@ require_once 'inc/headers.php';
 try{
     $db=opendb();
     jsonFactory($db,"select * from kirja");
+    jsonFactory($db,"select * from kirjailija");
+    jsonFactory($db,"select * from jurlkaisija");
 
 } catch (PDOException $pdoex) {
     returnError($pdoex); 

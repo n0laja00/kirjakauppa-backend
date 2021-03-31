@@ -15,7 +15,7 @@ $kirjakategoria_id=$url[1];
 
 try {
     $db = opendb();
-    jsonFactory($db,"select * from kirjakategoria where kategoriaNro = $kirjakategoria_id");
+    jsonFactory($db,"select * from julkaisija where kategoriaNro = $kirjakategoria_id");
 
 } catch (PDOException $pdoex) {
     returnError($pdoex);
