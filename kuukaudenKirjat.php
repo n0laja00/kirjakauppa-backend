@@ -4,10 +4,10 @@ require_once 'inc/functions.php';
 require_once 'inc/headers.php';
 
 $input = json_decode(file_get_contents('php://input'));
-$book1 = filter_var($input-> $_GET['kirja1'],FILTER_SANITIZE_STRING);
-$book2 = filter_var($input-> $_GET['kirja2'],FILTER_SANITIZE_STRING);
-$book3 = filter_var($input-> $_GET['kirja3'],FILTER_SANITIZE_STRING);
-$book4 = filter_var($input-> $_GET['kirja4'],FILTER_SANITIZE_STRING);
+$book1 = filter_input(INPUT_GET, "book1", FILTER_SANITIZE_STRING);
+$book2 = filter_input(INPUT_GET, "book2", FILTER_SANITIZE_STRING);
+$book3 = filter_input(INPUT_GET, "book3", FILTER_SANITIZE_STRING);
+$book4 = filter_input(INPUT_GET, "book4", FILTER_SANITIZE_STRING);
 
 try{
     $db=opendb();
