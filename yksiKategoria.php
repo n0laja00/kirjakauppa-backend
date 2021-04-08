@@ -7,9 +7,6 @@ $uri = parse_url(filter_input(INPUT_SERVER,'PATH_INFO'),PHP_URL_PATH);
 $parameters = explode('/',$uri);
 $criteria = $parameters[1];
 
-
-$id = '3';
-
 try{
     $db=opendb(); 
 
