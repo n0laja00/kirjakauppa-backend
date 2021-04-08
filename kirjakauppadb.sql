@@ -102,7 +102,7 @@ nimimerkki varchar(10) NOT NULL,
 
 otsikko varchar(15) NOT NULL, 
 
-teskti TINYTEXT, 
+teksti TINYTEXT, 
 
 luotu timestamp default current_timestamp(), 
 
@@ -347,4 +347,6 @@ Insert into kirjakategoria (kirjaNro, kategoriaNro)
 Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3); 
 
 
-INSERT INTO ARVOSTELU (nimimerkki, otsikko, teskti, kirjaNro) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6);
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6);
+
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6);
