@@ -96,7 +96,7 @@ FOREIGN KEY (julkaisijaNro) REFERENCES Julkaisija (julkaisijaNro)
 
 CREATE TABLE Arvostelu ( 
 
-arvostelyNro INT PRIMARY KEY AUTO_INCREMENT, 
+arvosteluNro INT PRIMARY KEY AUTO_INCREMENT, 
 
 nimimerkki varchar(10) NOT NULL, 
 
@@ -345,3 +345,6 @@ INSERT INTO KATEGORIA(Kategoria) VALUES ("Tietokirjallisuus"), ("Toiminta"), ("S
 Insert into kirjakategoria (kirjaNro, kategoriaNro)  
 
 Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3); 
+
+
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teskti, kirjaNro) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6);
