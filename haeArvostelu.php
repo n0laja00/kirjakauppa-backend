@@ -13,7 +13,7 @@ $arvosteluId = $url[0];
 
 try {
     $db = opendb();
-    jsonFactory($db, "select * from arvostelu where arvosteluNro = $arvosteluId");
+    jsonFactory($db, "select * from arvostelu where kirjaNro = $arvosteluId");
 } catch (PDOException $pdoex) {
     returnError($pdoex);
 };
