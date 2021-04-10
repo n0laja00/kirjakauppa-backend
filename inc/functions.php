@@ -16,6 +16,13 @@ function returnError(PDOException $pdoex) {
     exit;
 };
 
+function returnCustomError(string $message): void {
+    header('HTTP/1.1 500 Internal Server Error');
+    $error = array('error' => $message);
+    echo json_encode($error);
+    exit;
+  }
+
 
 function jsonFactory(object $db, string $sql): void {
     $query = $db->query($sql);
