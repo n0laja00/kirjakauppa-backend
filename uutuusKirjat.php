@@ -20,7 +20,7 @@ try{
         inner join kirjailija
             on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
     GROUP BY kirjaNimi
-    HAVING vuosi =" . date("Y") . "");
+    HAVING vuosi =" . date("Y") . '');
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 }
