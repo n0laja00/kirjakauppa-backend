@@ -12,13 +12,17 @@ $bookId = filter_var($input->kirjaNro, FILTER_SANITIZE_NUMBER_INT);
 try {
     $db = opendb();
 
-    $query = $db->prepare("insert into arvostelu(nimimerkki, otsikko, teksti, kirjaNro) values (:nimimerkki, :otsikko, :teksti, :kirjaNro)"); 
-    // jsonFactory($db, "insert into arvostelu(nimimerkki, otsikko, teksti, kirjaNro) values (:nimimerkki, :otsikko, :teksti, :kirjaNro)");
+    $query = $db->prepare("insert into arvostelu(nimimerkki, otsikko, teksti, kirjaNro) values (:nimimerkki, :otsikko, :teksti, :kirjaNro)");
     $query->bindValue(':nimimerkki', $name, PDO::PARAM_STR);
     $query->bindValue(':otsikko', $title, PDO::PARAM_STR);
     $query->bindValue(':teksti', $text, PDO::PARAM_STR);
     $query->bindValue(':kirjaNro', $bookId, PDO::PARAM_INT);
     $query->execute();
+
+    $data = array('arvosteluNro' => $db->lastInsertId(), 'nimimerkki' => $name, 'otsikko' => $title, 'teksti' => $text);
+    header('HTTP/1.1 200 OK');
+    echo json_encode($data);
+
 
 } catch (PDOException $pdoex) {
     returnError($pdoex);
