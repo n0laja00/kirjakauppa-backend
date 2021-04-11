@@ -274,41 +274,41 @@ insert into julkaisija (julkaisija, puhNro, email) values ('Simon & Schuter', 04
 
  
 
-INSERT INTO KIRJA VALUES ("Jannen Kirja", "", 390, 15.90, "", 8.90, "Tämä Jannen kirja on aika hyvä.", "kuva.png", 1, "2021-11-01 00:00:00", ""); 
+INSERT INTO KIRJA VALUES ("Jannen Kirja", "", 390, 15.90, "", 8.90, "Tämä Jannen kirja on aika hyvä.", "kirja1.png", 1, "2021-11-01 00:00:00", ""); 
 
  
 
-insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) values ("Beautiful Nights", 450, 19.90, 8.50, "Kaukaisessa Pariisissa yöt kuumuvat yllävän lämpimiksi.", "kuva.png", 2, "2013-04-09 00:00:00"); 
-
- 
-
-insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-
-values ("Terror of London", 222, 12.90, 4.50, "Lontoon kaduilla vaanii julma olento.", "kuva.png",  2, "2019-01-24 00:00:00"); 
+insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) values ("Beautiful Nights", 450, 19.90, 8.50, "Kaukaisessa Pariisissa yöt kuumuvat yllävän lämpimiksi.", "kirja2.png", 2, "2013-04-09 00:00:00"); 
 
  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 
-values ("Maamme Kauneus", 142, 15.90, 3.50, "Suomi on kaunis maa", "kuva.png", 1, "2012-03-21 00:00:00"); 
+values ("Terror of London", 222, 12.90, 4.50, "Lontoon kaduilla vaanii julma olento.", "kirja3.png",  2, "2019-01-24 00:00:00"); 
 
  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 
-values ("Jalkaväen Kauhein Hetki", 451, 25.50, 9.50, "Ensimmäinen maailman sota tappoi enemmän ihmisiä kuin ensimmäinen maailmansota. Miksi näin oli? Mitkä tekijät tähän vaikutti?", "kuva.png", 1, "2012-5-21 00:00:00"); 
+values ("Maamme Kauneus", 142, 15.90, 3.50, "Suomi on kaunis maa", "kirja4.png", 1, "2012-03-21 00:00:00"); 
 
  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 
-values ("Matrix: Pitkä Matikka 1", 90, 30.00, 5.30, "Pitkän matikan opiskelijoille.", "kuva.png", 1, "2016-09-29 00:00:00"); 
+values ("Jalkaväen Kauhein Hetki", 451, 25.50, 9.50, "Ensimmäinen maailman sota tappoi enemmän ihmisiä kuin ensimmäinen maailmansota. Miksi näin oli? Mitkä tekijät tähän vaikutti?", "kirja5.png", 1, "2012-5-21 00:00:00"); 
 
  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 
-values ("Saariselän Ritarin Sapeli", 658, 319.90, 10.50, "Saariselän ritari on legendaarinen soturi. Hänen kuolemansa jätti kuningaskunnan ilman puolustajaa. Miten kuningaskunta pystyy vastustamaan nousevaa pimeää voimaa vuorten toisella puolella?", "kuva.png", 1, "2004-1-21 00:00:00"); 
+values ("Matrix: Pitkä Matikka 1", 90, 30.00, 5.30, "Pitkän matikan opiskelijoille.", "kirja6.png", 1, "2016-09-29 00:00:00"); 
+
+ 
+
+insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
+
+values ("Saariselän Ritarin Sapeli", 658, 319.90, 10.50, "Saariselän ritari on legendaarinen soturi. Hänen kuolemansa jätti kuningaskunnan ilman puolustajaa. Miten kuningaskunta pystyy vastustamaan nousevaa pimeää voimaa vuorten toisella puolella?", "kirja7.png", 1, "2004-1-21 00:00:00"); 
 
  
 
