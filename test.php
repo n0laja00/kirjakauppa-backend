@@ -1,6 +1,6 @@
 <?php
 
-$id='4';
+$id='1';
 $id1='5';
-print("<a href='testi1.php/$id/$id1'>Go to site</a>");
+print("<a href='haeKirjaNro.php/$id/$id1'>Go to site</a>");
 

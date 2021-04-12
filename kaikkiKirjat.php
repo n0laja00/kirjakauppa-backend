@@ -16,7 +16,8 @@ try{
         inner join kirjailijakirja
             on kirja.kirjaNro = kirjailijakirja.kirjaNro
         inner join kirjailija
-            on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro");
+            on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
+            group by kirjaNimi");
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 };
