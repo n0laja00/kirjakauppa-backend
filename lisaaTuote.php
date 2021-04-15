@@ -26,65 +26,18 @@ if ($bookCategory === '') {
 //615 width 908 height
 try{
 
-  if(isset($_FILES['file'])) {
-    if(is_array($_FILES)) {
-
-
-        $file = $_FILES['file']['tmp_name']; 
-        $sourceProperties = getimagesize($file);
-        $fileNewName = time();
-        $folderPath = "img/";
-        $ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        $imageType = $sourceProperties[2];
-
-
-        switch ($imageType) {
-
-
-            case IMAGETYPE_PNG:
-                $imageResourceId = imagecreatefrompng($file); 
-                $targetLayer = imageResize($imageResourceId,$sourceProperties[0],$sourceProperties[1]);
-                imagepng($targetLayer,$folderPath. $fileNewName. "_thump.". $ext);
-                break;
-
-
-            case IMAGETYPE_GIF:
-                $imageResourceId = imagecreatefromgif($file); 
-                $targetLayer = imageResize($imageResourceId,$sourceProperties[0],$sourceProperties[1]);
-                imagegif($targetLayer,$folderPath. $fileNewName. "_thump.". $ext);
-                break;
-
-
-            case IMAGETYPE_JPEG:
-                $imageResourceId = imagecreatefromjpeg($file); 
-                $targetLayer = imageResize($imageResourceId,$sourceProperties[0],$sourceProperties[1]);
-                imagejpeg($targetLayer,$folderPath. $fileNewName. "_thump.". $ext);
-                break;
-
-
-            default:
-                echo "Invalid Image type.";
-                exit;
-                break;
-        }
-
-
-        move_uploaded_file($file, $folderPath. $fileNewName. ".". $ext);
-        echo "Image Resize Successfully.";
-    }
-}
-  // if (isset($_FILES['file'])) {
-  //   if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
-  //     $filename = $_FILES['file']['name'];
-  //     $type = $_FILES['file']['type'];
+  if (isset($_FILES['file'])) {
+    if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
+      $filename = $_FILES['file']['name'];
+      $type = $_FILES['file']['type'];
       
   
-  //     if ($type === 'image/png')  {
-  //       $path = 'img/' . basename($filename);
+      if ($type === 'image/png')  {
+        $path = 'img/' . basename($filename);
   
-  //       if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
-  //         $data = array('filename' => $filename,'type' => $type);
-  //         echo json_encode($data);
+        if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
+          $data = array('filename' => $filename,'type' => $type);
+          echo json_encode($data);
           
 
           $db = openDb();
@@ -120,18 +73,18 @@ try{
             }
           }
 
-  //       } else {
-  //         returnCustomError('Virhe kuvan tallentamisessa tietokantaan');
-  //       }
-  //     } else {  
-  //       returnCustomError('Käytä .PNG tyyppiä kuvissa!');
-  //     }
-  //   } else {
-  //     returnCustomError('Virhe tiedostoa tallentaessa');
-  //   }
-  // } else {
-  //   returnCustomError('Kuvaa ei tallennettu');
-  // }
+        } else {
+          returnCustomError('Virhe kuvan tallentamisessa tietokantaan');
+        }
+      } else {  
+        returnCustomError('Käytä .PNG tyyppiä kuvissa!');
+      }
+    } else {
+      returnCustomError('Virhe tiedostoa tallentaessa');
+    }
+  } else {
+    returnCustomError('Kuvaa ei tallennettu');
+  }
 
 } catch(PDOException $pdoex) {
 returnError($pdoex);
