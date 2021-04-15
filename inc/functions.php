@@ -30,3 +30,17 @@ function jsonFactory(object $db, string $sql): void {
     header('http/1.1 200 OK');
     echo json_encode($results, JSON_PRETTY_PRINT); 
 }
+
+function imageResize($imageResourceId,$width,$height) {
+
+
+    $targetWidth = 615;
+    $targetHeight = 908;
+
+
+    $targetLayer=imagecreatetruecolor($targetWidth,$targetHeight);
+    imagecopyresampled($targetLayer,$imageResourceId,0,0,0,0,$targetWidth,$targetHeight, $width,$height);
+
+
+    return $targetLayer;
+}
