@@ -17,15 +17,7 @@ try{
             on kirja.kirjaNro = kirjailijakirja.kirjaNro
         inner join kirjailija
             on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
-            group by kirjaNimi");
+            group by kirja.kirjaNro");
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 };
-
-/*
-$sql="select * from kirja";
-$query =$db->query($sql); 
-$results = $query->fetchAll(PDO::FETCH_ASSOC); 
-
-header('http/1.1 200 OK');
-echo json_encode($results, JSON_PRETTY_PRINT); */

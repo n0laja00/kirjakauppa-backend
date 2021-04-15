@@ -14,7 +14,7 @@ try{
     FROM kirja, kirjakategoria, kategoria
     WHERE kirja.kirjanro=kirjakategoria.kirjanro AND
     kirjakategoria.kategoriaNro=kategoria.kategoriaNro AND
-    kirjakategoria.kategoriaNro = $criteria";
+    kirjakategoria.kategoriaNro = $criteria group by kirja.kirjaNro";
 
     jsonFactory($db, $sql); 
 

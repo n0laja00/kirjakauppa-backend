@@ -13,7 +13,7 @@ $arvosteluId = $parametrit[0];
 
 try {
     $db = opendb();
-    jsonFactory($db, "select arvosteluNro, kirjaNimi, nimimerkki, otsikko, teksti, YEAR(arvostelu.luotu) AS luotu from arvostelu INNER JOIN kirja ON arvostelu.kirjaNro = kirja.kirjaNro where arvostelu.kirjaNro = $arvosteluId");
+    jsonFactory($db, "select arvosteluNro, kirjaNimi, nimimerkki, otsikko, teksti, YEAR(arvostelu.luotu) AS luotu from arvostelu INNER JOIN kirja ON arvostelu.kirjaNro = kirja.kirjaNro where arvostelu.kirjaNro = $arvosteluId group by arvostelu.arvosteluNro");
 } catch (PDOException $pdoex) {
     returnError($pdoex);
 };
