@@ -14,11 +14,13 @@ lahiosoite VARCHAR(50),
 
 postitmp VARCHAR(30), 
 
-postinro VARCHAR(10), 
+postiNro VARCHAR(10), 
 
 puhNro VARCHAR(15), 
 
-email VARCHAR(80) 
+email VARCHAR(80) ,
+
+yritys varchar(20)
 
 ); 
 
@@ -38,7 +40,7 @@ maksutapa CHAR(1),
 
 postitmp VARCHAR(30), 
 
-postinro VARCHAR(10), 
+postiNro VARCHAR(10), 
 
 lahiosoite VARCHAR(50) 
 
@@ -166,16 +168,13 @@ FOREIGN KEY (kirjailijaNro) REFERENCES Kirjailija(kirjailijaNro)
 
 CREATE TABLE Tilausrivi ( 
 
-tilausNro INT PRIMARY KEY AUTO_INCREMENT, 
-
-riviNro INT not null, 
-
+tilausNro INT NOT NULL,
+riviNro INT NOT NULL,
 kirjaNro INT, 
-
-kpl INT not null, 
-
-FOREIGN KEY (kirjaNro) REFERENCES Kirja(kirjaNro) 
-
+kpl INT not null,
+CONSTRAINT tilausrivi_pk PRIMARY KEY (tilausNro, riviNro),
+CONSTRAINT tilausrivi_kirja_fk FOREIGN KEY (kirjaNro) 
+           REFERENCES kirja (kirjaNro)
 ); 
 
  
