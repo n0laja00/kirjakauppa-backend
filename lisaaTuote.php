@@ -13,6 +13,8 @@ $bookExpense = filter_input(INPUT_POST, 'bookExpense',FILTER_SANITIZE_NUMBER_INT
 $bookPublisher = filter_input(INPUT_POST, 'publisher',FILTER_SANITIZE_STRING);
 $bookPublishDate = filter_input(INPUT_POST, 'bookPublished',FILTER_SANITIZE_STRING);
 $bookCategory =  filter_input(INPUT_POST, 'bookCategory',FILTER_SANITIZE_STRING);
+$bookCategory2 = filter_input(INPUT_POST, 'bookCategory2',FILTER_SANITIZE_STRING);
+
 
 if (isset($_FILES['file'])) {
   if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
@@ -48,6 +50,7 @@ REPLACE INTO kirjailija(etunimi, sukunimi) VALUES (:etunimi, :sukunimi); INSERT 
     WHERE etunimi=:etunimi AND sukunimi=:sukunimi));
 INSERT INTO kirjakategoria VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi),
     (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria))");
+
 $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
 $query->bindValue(':kuvaus',$bookDesc,PDO::PARAM_STR);
 $query->bindValue(':etunimi',$bookWriterFN,PDO::PARAM_STR);
@@ -61,9 +64,13 @@ $query->bindValue(':julkaistu',$bookPublishDate,PDO::PARAM_STR);
 $query->bindValue(':kategoria',$bookCategory,PDO::PARAM_STR);
 $query->execute();
 
-
-
-header('HTTP/1.1 200 OK');
+if ($bookCategory2 !== '') {
+  $query = $db->prepare("INSERT INTO kirjakategoria VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi),
+  (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria2))");
+  $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
+  $query->bindValue(':kategoria2',$bookCategory2,PDO::PARAM_STR);
+  $query->execute();
+}
 
 } catch(PDOException $pdoex) {
 returnError($pdoex);
