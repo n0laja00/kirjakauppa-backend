@@ -11,7 +11,7 @@ $url = parse_url(filter_input(INPUT_SERVER,'PATH_INFO'), PHP_URL_PATH);
 // Parametrit erotellaan /ssilla
 $parametrit = explode('/',$url);
 // kategoria on ensimmäinen parametri,joka seuraa osoitteen jälkeen ja eroteltu: /
-$kirjakategoria_id=$url[1];
+$kirjakategoria_id = $parametrit[1];
 
 try {
     $db = opendb();
