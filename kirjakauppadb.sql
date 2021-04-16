@@ -22,6 +22,7 @@ email VARCHAR(80) ,
 
 yritys varchar(20)
 
+
 ); 
 
  
@@ -42,7 +43,10 @@ postitmp VARCHAR(30),
 
 postiNro VARCHAR(10), 
 
-lahiosoite VARCHAR(50) 
+lahiosoite VARCHAR(50),
+
+FOREIGN KEY (asNro) REFERENCES Asiakas (asNro) 
+
 
 ); 
 

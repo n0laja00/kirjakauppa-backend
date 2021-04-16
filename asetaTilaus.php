@@ -22,10 +22,11 @@ $maksutapa='v';
 
 try{
     $db = opendb();
-    $query = $db->prepare("insert into asiakas(asEtunimi, asSukunimi, lahiosoite, postiNro, puhNro, email, yritys) values (:asEtunimi, :asSukunimi, :lahiosoite, :postiNro, :puhNro, :email, :yritys)");
+    $query = $db->prepare("insert into asiakas(asEtunimi, asSukunimi, lahiosoite, postitmp, postiNro, puhNro, email, yritys) values (:asEtunimi, :asSukunimi, :lahiosoite, :postitmp, :postiNro, :puhNro, :email, :yritys)");
     $query->bindValue(':asEtunimi', $asEtunimi,  PDO::PARAM_STR);
     $query->bindValue(':asSukunimi', $asSukunimi,  PDO::PARAM_STR);
     $query->bindValue(':lahiosoite', $lahiosoite,  PDO::PARAM_STR);
+    $query->bindValue(':postitmp', $postitmp, PDO::PARAM_STR);
     $query->bindValue(':postiNro', $postiNro, PDO::PARAM_INT);
     $query->bindValue(':puhNro', $puhNro, PDO::PARAM_INT);
     $query->bindValue(':email', $email, PDO::PARAM_STR);
