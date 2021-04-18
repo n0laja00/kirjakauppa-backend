@@ -108,7 +108,9 @@ nimimerkki varchar(10) NOT NULL,
 
 otsikko varchar(15) NOT NULL, 
 
-teksti TINYTEXT, 
+teksti TEXT, 
+
+arvosana smallint,
 
 luotu timestamp default current_timestamp(), 
 
