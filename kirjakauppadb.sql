@@ -197,7 +197,7 @@ postinro VARCHAR(10),
 
 puhNro VARCHAR(15), 
 
-Email VARCHAR(80) 
+Email VARCHAR(80)
 
 ); 
 
