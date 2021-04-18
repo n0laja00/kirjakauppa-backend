@@ -267,7 +267,15 @@ FOREIGN KEY (varastoNro) REFERENCES Varasto(varastoNro)
 
 ); 
 
- 
+CREATE TABLE `user` (
+  id int primary key auto_increment,
+  fname varchar(50) not null,
+  lname varchar(100) not null,
+  username varchar(50) not null,
+  password varchar(255) not null
+);
+
+insert into user(fname,lname,username,password) values ('Verkkokaupan','ylläpitäjä','ylläpitäjä','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
 
  
 
