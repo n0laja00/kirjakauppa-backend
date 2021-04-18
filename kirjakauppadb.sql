@@ -352,6 +352,6 @@ Insert into kirjakategoria (kirjaNro, kategoriaNro)
 Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3), (4,1); 
 
 
-INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6);
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6, 5);
 
-INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6);
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6, 2);
