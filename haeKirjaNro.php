@@ -13,7 +13,7 @@ $kirjaNro_id = $parametrit[0];
 
 try {
     $db = opendb();
-    jsonFactory($db, "select DISTINCT(kirjaNimi), kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) AS julkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
+    jsonFactory($db, "select DISTINCT(kirjaNimi), kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) AS julkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria, AVG(arvosana) as arvosana
     from kirja
         inner join kirjakategoria
             on kirja.kirjaNro = kirjakategoria.kirjaNro
@@ -25,6 +25,8 @@ try {
             on kirja.kirjaNro = kirjailijakirja.kirjaNro
         inner join kirjailija
             on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
+        inner join arvostelu
+            on kirja.kirjaNro = arvostelu.kirjaNro
     where kirja.kirjaNro=$kirjaNro_id group by kirja.kirjaNimi");
 } catch (PDOException $pdoex) {
     returnError($pdoex);

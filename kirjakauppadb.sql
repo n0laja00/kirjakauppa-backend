@@ -108,7 +108,9 @@ nimimerkki varchar(10) NOT NULL,
 
 otsikko varchar(15) NOT NULL, 
 
-teksti TINYTEXT, 
+teksti TEXT, 
+
+arvosana smallint,
 
 luotu timestamp default current_timestamp(), 
 
@@ -265,7 +267,15 @@ FOREIGN KEY (varastoNro) REFERENCES Varasto(varastoNro)
 
 ); 
 
- 
+CREATE TABLE `user` (
+  id int primary key auto_increment,
+  fname varchar(50) not null,
+  lname varchar(100) not null,
+  username varchar(50) not null,
+  password varchar(255) not null
+);
+
+insert into user(fname,lname,username,password) values ('Verkkokaupan','ylläpitäjä','ylläpitäjä','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
 
  
 
@@ -350,6 +360,6 @@ Insert into kirjakategoria (kirjaNro, kategoriaNro)
 Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3), (4,1); 
 
 
-INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6);
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6, 5);
 
-INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6);
+INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6, 2);
