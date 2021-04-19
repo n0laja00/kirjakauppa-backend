@@ -125,7 +125,6 @@ FOREIGN KEY (kirjaNro) REFERENCES Kirja(kirjaNro)
 CREATE TABLE Kategoria ( 
 
 kategoria VARCHAR(20) not null, 
-
 kategoriaNro smallint PRIMARY KEY AUTO_INCREMENT 
 
 ); 
@@ -180,7 +179,7 @@ kirjaNro INT,
 kpl INT not null,
 CONSTRAINT tilausrivi_pk PRIMARY KEY (tilausNro, riviNro),
 CONSTRAINT tilausrivi_kirja_fk FOREIGN KEY (kirjaNro) 
-           REFERENCES kirja (kirjaNro)
+    REFERENCES kirja (kirjaNro)
 ); 
 
  
