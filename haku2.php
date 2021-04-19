@@ -4,7 +4,7 @@ require_once 'inc/headers.php';
 
 try {
     $db = openDb();
-    $sql = "select kirjaNimi from kirja";
+    $sql = "select kirjaNro, kirjaNimi from kirja";
     jsonFactory($db, $sql);
 } 
 catch (PDOException $pdoex) {
