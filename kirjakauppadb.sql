@@ -35,9 +35,9 @@ asNro INT,
 
 tilauspvm DATETIME DEFAULT CURRENT_TIMESTAMP, 
 
-toimitustapa CHAR(1), 
+toimitustapa CHAR(10), 
 
-maksutapa CHAR(1), 
+maksutapa CHAR(10), 
 
 postitmp VARCHAR(30), 
 
