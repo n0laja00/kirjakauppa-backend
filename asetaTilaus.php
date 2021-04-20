@@ -22,6 +22,7 @@ $maksutapa=filter_var($input->maksutapa, FILTER_SANITIZE_STRING);
 
 try{
     $db = opendb();
+    $db->beginTransaction();
     $query = $db->prepare("insert into asiakas(asEtunimi, asSukunimi, lahiosoite, postitmp, postiNro, puhNro, email, yritys) values (:asEtunimi, :asSukunimi, :lahiosoite, :postitmp, :postiNro, :puhNro, :email, :yritys)");
     $query->bindValue(':asEtunimi', $asEtunimi,  PDO::PARAM_STR);
     $query->bindValue(':asSukunimi', $asSukunimi,  PDO::PARAM_STR);
@@ -57,12 +58,14 @@ try{
         $query->execute();
         $riviNro=$riviNro+1;
     };
+    $db->commit();
 
     header('HTTP/1.1 200 OK');
     $data = array('Tilaus tehty');
     echo json_encode($data);
 
 }catch(PDOException $pdoex){
+    $db->rollBack();
     returnError($pdoex);
 }
 
