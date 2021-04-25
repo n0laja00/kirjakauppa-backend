@@ -18,6 +18,8 @@ $postiNro = filter_var($input->postiNro, FILTER_SANITIZE_STRING);
 $ostoskori = filter_var_array($cart['ostoskori'], FILTER_SANITIZE_NUMBER_INT);
 $toimitustapa=filter_var($input->toimitustapa, FILTER_SANITIZE_STRING);
 $toimitusosoite=filter_var($input->toimitusosoite, FILTER_SANITIZE_STRING);
+$toimituspostiNro=filter_var($input->toimituspostinro, FILTER_SANITIZE_NUMBER_INT);
+$toimituspostitmp=filter_var($input->toimituspostitmp, FILTER_SANITIZE_STRING);
 $maksutapa=filter_var($input->maksutapa, FILTER_SANITIZE_STRING);
 
 try{
@@ -36,12 +38,12 @@ try{
 
     $asiakas_id = $db->lastInsertId();
 
-    $query = $db->prepare("insert into tilaus(asNro, toimitustapa, maksutapa, postitmp, postiNro, lahiosoite) values (:asNro, :toimitustapa, :maksutapa, :postitmp, :postiNro, :toimitusosoite)");
+    $query = $db->prepare("insert into tilaus(asNro, toimitustapa, maksutapa, postitmp, postiNro, lahiosoite) values (:asNro, :toimitustapa, :maksutapa, :postitmp, :toimituspostiNro, :toimitusosoite)");
     $query->bindValue(':toimitustapa', $toimitustapa,  PDO::PARAM_STR);
     $query->bindValue(':maksutapa', $maksutapa, PDO::PARAM_STR);
     $query->bindValue(':asNro', $asiakas_id, PDO::PARAM_STR);
-    $query->bindValue(':postitmp', $postitmp, PDO::PARAM_STR);
-    $query->bindValue(':postiNro', $postiNro, PDO::PARAM_INT);
+    $query->bindValue(':postitmp', $toimituspostitmp, PDO::PARAM_STR);
+    $query->bindValue(':toimituspostiNro', $toimituspostiNro, PDO::PARAM_INT);
     $query->bindValue(':toimitusosoite', $toimitusosoite, PDO::PARAM_STR);
     $query->execute();
 

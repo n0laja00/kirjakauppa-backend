@@ -11,7 +11,7 @@ $book4 = filter_input(INPUT_GET, "book4", FILTER_SANITIZE_STRING);
 
 try{
     $db=opendb();
-    jsonFactory($db,"select DISTINCT(kirjaNimi), kirja.KirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) as 'vuosi', etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
+    jsonFactory($db,"select DISTINCT(kirjaNimi), kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) as 'vuosi', etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
     from kirja
         inner join kirjakategoria
             on kirja.kirjaNro = kirjakategoria.kirjaNro
