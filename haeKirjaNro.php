@@ -13,7 +13,7 @@ $kirjaNro_id = $parametrit[0];
 
 try {
     $db = opendb();
-    jsonFactory($db, "select kirjaNimi, kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) AS julkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria, IFNULL(AVG(arvosana), 0) as arvosana
+    jsonFactory($db, "select kirjaNimi, kirja.kirjaNro, sivuNro, hinta, kustannus, kuvaus, kuva, YEAR(julkaistu) AS julkaistu, DATE_FORMAT(julkaistu, '%Y-%m-%d') AS pvmJulkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria, IFNULL(AVG(arvosana), 0) as arvosana
     from kirja
         inner join kirjakategoria
             on kirja.kirjaNro = kirjakategoria.kirjaNro

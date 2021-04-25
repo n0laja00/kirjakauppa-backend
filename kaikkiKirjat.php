@@ -5,7 +5,7 @@ require_once 'inc/headers.php';
 
 try{
     $db=opendb();
-    jsonFactory($db,"select DISTINCT(kirjaNimi), kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, julkaistu, etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
+    jsonFactory($db,"select DISTINCT(kirjaNimi), kirja.kustannus, kirja.ale, kirja.kirjaNro, kirja.luotu, sivuNro, hinta, kuvaus, kuva, julkaistu, etunimi, sukunimi, julkaisija.julkaisija, julkaisija.julkaisijaNro, kategoria.kategoria
     from kirja
         inner join kirjakategoria
             on kirja.kirjaNro = kirjakategoria.kirjaNro

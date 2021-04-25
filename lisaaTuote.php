@@ -37,9 +37,9 @@ try{
         if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
           $data = array('filename' => $filename,'type' => $type);
           echo json_encode($data);
-          
 
           $db = openDb();
+          
           $query = $db->prepare("INSERT INTO kirja(kirjaNimi, sivuNro, hinta, kustannus, kuvaus, kuva, julkaistu, julkaisijaNro) 
           VALUES (:kirjaNimi, :sivuNro, :hinta, :kustannus, :kuvaus, :kuva, :julkaistu, 
           (SELECT julkaisijaNro FROM julkaisija WHERE julkaisija= :julkaisija));
@@ -61,6 +61,7 @@ try{
           $query->bindValue(':julkaistu',$bookPublishDate,PDO::PARAM_STR);
           $query->bindValue(':kategoria',$bookCategory,PDO::PARAM_STR);
           $query->execute();
+          
 
           foreach($extraCategories as $value) {
             if ($value !== '') {
@@ -86,5 +87,5 @@ try{
   }
 
 } catch(PDOException $pdoex) {
-returnError($pdoex);
+  returnError($pdoex);
 }
