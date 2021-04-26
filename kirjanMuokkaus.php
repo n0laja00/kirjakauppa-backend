@@ -58,9 +58,10 @@ try{
 
   $query = $db->prepare("UPDATE kirja SET kirjaNimi = :kirjaNimi, sivuNro = :sivuNro, hinta = :hinta, kustannus = :kustannus, kuvaus = :kuvaus, julkaistu = :julkaistu,  julkaisijaNro =  (SELECT julkaisijaNro FROM julkaisija WHERE julkaisija= :julkaisija) $bookUpdateSQL 
   WHERE kirjaNro = :kirjaNro;
-  UPDATE kirjailija SET etunimi = :etunimi, sukunimi = :sukunimi; UPDATE kirjailijakirja SET kirjaNro = (SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi), kirjailijaNro = (SELECT kirjailijaNro FROM kirjailija
-      WHERE etunimi=:etunimi AND sukunimi=:sukunimi);
-  UPDATE kirjakategoria SET kirjaNro = (SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi), kategoriaNro = (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria)");
+  UPDATE kirjailija SET etunimi = :etunimi, sukunimi = :sukunimi WHERE kirjailijaNro = (SELECT kirjailijaNro FROM kirjailijakirja WHERE kirjaNro = :kirjaNro); UPDATE kirjailijakirja SET kirjaNro = (SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi), kirjailijaNro = (SELECT kirjailijaNro FROM kirjailija
+      WHERE etunimi=:etunimi AND sukunimi=:sukunimi) WHERE kirjaNro = :kirjaNro;
+  DELETE FROM kirjakategoria WHERE kirjaNro = :kirjaNro;
+  INSERT INTO kirjakategoria (kirjaNro, kategoriaNro) VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi), (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria))");
 
   $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
   $query->bindValue(':kirjaNro',$bookNo,PDO::PARAM_INT);
@@ -80,13 +81,10 @@ try{
   
 
   foreach($extraCategories as $value) {
-    if ($value !== 'undefined') {
-      $query = $db->prepare("INSERT INTO kirjakategoria VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi),
-      (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria2))");
-      $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
-      $query->bindValue(':kategoria2',$value,PDO::PARAM_STR);
-      $query->execute();
-    }
+        $query = $db->prepare("INSERT INTO kirjakategoria (kirjaNro, kategoriaNro) VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi), (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria2))");
+        $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
+        $query->bindValue(':kategoria2',$value,PDO::PARAM_STR);
+        $query->execute();
   }
 
 } catch(PDOException $pdoex) {
