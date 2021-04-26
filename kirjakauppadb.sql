@@ -270,13 +270,13 @@ CREATE TABLE `user` (
   id int primary key auto_increment,
   fname varchar(50) not null,
   lname varchar(100) not null,
-  username varchar(50) not null,
+  email varchar(100) not null,
   password varchar(255) not null
 );
 
-insert into user(fname,lname,username,password) values ('Verkkokaupan','ylläpitäjä','ylläpitäjä','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
+insert into user(fname,lname,email,password) values ('Admin','käyttäjä','admin.user.0988','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
 
- 
+insert into user(fname,lname,email,password) values ('Essi','Esimerkki','essiesimerkki@gmail.com','$2y$10$pFdKzKiyMk7ukXIDJWdyQ.1TjyoH7kAWfm6xGKxj8l26.ECV.i/CO');
 
 INSERT INTO JULKAISIJA VALUES ("", "Otava", 12358230, "otava@otava.fi"); 
 
