@@ -276,7 +276,7 @@ CREATE TABLE `user` (
 
 insert into user(fname,lname,email,password) values ('Admin','käyttäjä','admin.user.0988','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
 
-insert into user(fname,lname,email,password) values ('Essi','Esimerkki','essiesimerkki@gmail.com','$2y$10$pFdKzKiyMk7ukXIDJWdyQ.1TjyoH7kAWfm6xGKxj8l26.ECV.i/CO')
+insert into user(fname,lname,email,password) values ('Essi','Esimerkki','essiesimerkki@gmail.com','$2y$10$pFdKzKiyMk7ukXIDJWdyQ.1TjyoH7kAWfm6xGKxj8l26.ECV.i/CO');
 
 INSERT INTO JULKAISIJA VALUES ("", "Otava", 12358230, "otava@otava.fi"); 
 

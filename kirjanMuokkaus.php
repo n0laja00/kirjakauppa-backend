@@ -81,7 +81,7 @@ try{
 
   foreach($extraCategories as $value) {
     if ($value !== 'undefined') {
-      $query = $db->prepare("REPLACE INTO kirjakategoria VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi),
+      $query = $db->prepare("INSERT INTO kirjakategoria VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = :kirjaNimi),
       (SELECT kategoriaNro FROM kategoria WHERE kategoria = :kategoria2))");
       $query->bindValue(':kirjaNimi',$bookName,PDO::PARAM_STR);
       $query->bindValue(':kategoria2',$value,PDO::PARAM_STR);
