@@ -280,15 +280,10 @@ insert into user(fname,lname,email,password) values ('Essi','Esimerkki','essiesi
 
 INSERT INTO JULKAISIJA VALUES ("", "Otava", 12358230, "otava@otava.fi"); 
 
- 
-
 insert into julkaisija (julkaisija, puhNro, email) values ('Simon & Schuter', 04023213, 'Simon@simonschuter.com'); 
-
- 
 
 INSERT INTO KIRJA VALUES ("Jannen Kirja", "", 390, 15.90, "", 8.90, "Tämä Jannen kirja on aika hyvä.", "kirja1.png", 1, "2021-11-01 00:00:00", ""); 
 
- 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) values ("Beautiful Nights", 450, 19.90, 8.50, "Kaukaisessa Pariisissa yöt kuumuvat yllävän lämpimiksi.", "kirja2.png", 2, "2013-04-09 00:00:00"); 
 
