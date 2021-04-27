@@ -3,10 +3,10 @@ session_start();
 require_once 'inc/headers.php';
 require_once 'inc/functions.php';
 
-$username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_STRING);
+$email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING);
 
-$sql = "select * from user where username='$username'";
+$sql = "select * from user where email='$email'";
 
 try {
   $db = openDb();

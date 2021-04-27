@@ -22,6 +22,18 @@ $toimituspostiNro=filter_var($input->toimituspostinro, FILTER_SANITIZE_NUMBER_IN
 $toimituspostitmp=filter_var($input->toimituspostitmp, FILTER_SANITIZE_STRING);
 $maksutapa=filter_var($input->maksutapa, FILTER_SANITIZE_STRING);
 
+if(strlen($toimitusosoite = 0)){
+    $toimitusosoite = $lahiosoite;
+};
+
+if(strlen($toimituspostiNro = 0)){
+    $toimituspostiNro = $postiNro;
+};
+
+if(strlen($toimituspostitmp = 0)){
+    $toimituspostitmp = $postitmp;
+};
+
 try{
     $db = opendb();
     $db->beginTransaction();

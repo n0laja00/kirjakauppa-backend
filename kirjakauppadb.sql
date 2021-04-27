@@ -138,11 +138,13 @@ CREATE TABLE `user` (
   id int primary key auto_increment,
   fname varchar(50) not null,
   lname varchar(100) not null,
-  username varchar(50) not null,
+  email varchar(100) not null,
   password varchar(255) not null
 );
 
-insert into user(fname,lname,username,password) values ('Verkkokaupan','ylläpitäjä','ylläpitäjä','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
+insert into user(fname,lname,email,password) values ('Admin','käyttäjä','admin.user.0988','$2y$10$wGXo.N6JFly5uL4O5obKEuit/CAH6iuXawI9LyzNTrHy/WYkWknWK');
+
+insert into user(fname,lname,email,password) values ('Essi','Esimerkki','essiesimerkki@gmail.com','$2y$10$pFdKzKiyMk7ukXIDJWdyQ.1TjyoH7kAWfm6xGKxj8l26.ECV.i/CO');
 
 INSERT INTO JULKAISIJA VALUES ("", "Otava", 12358230, "otava@otava.fi"); 
 
@@ -245,7 +247,6 @@ INSERT INTO KATEGORIA(Kategoria) VALUES ("Tietokirjallisuus"), ("Toiminta"), ("S
 
 Insert into kirjakategoria (kirjaNro, kategoriaNro)  
 Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3), (4,1), (8,7), (9,1), (10,2), (11,1), (11,4), (12,5), (13,6), (14,1), (15,3), (16,3), (17,1), (18,5), (19,2), (19,5), (20,7), (21,6), (22,1), (23,1), (23,4); 
-
 
 INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6, 5);
 

@@ -8,8 +8,8 @@ $bookWriterFN = filter_input(INPUT_POST, 'bookWriterFN',FILTER_SANITIZE_STRING);
 $bookWriterLN = filter_input(INPUT_POST, 'bookWriterLN',FILTER_SANITIZE_STRING);
 $bookPublishDate = filter_input(INPUT_POST, 'bookPublished',FILTER_SANITIZE_STRING);
 $bookPage = filter_input(INPUT_POST, 'bookPage',FILTER_SANITIZE_NUMBER_INT);
-$bookPrice = filter_input(INPUT_POST, 'bookPrice',FILTER_SANITIZE_NUMBER_INT);
-$bookExpense = filter_input(INPUT_POST, 'bookExpense',FILTER_SANITIZE_NUMBER_INT);
+$bookPrice = filter_input(INPUT_POST, 'bookPrice',FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$bookExpense = filter_input(INPUT_POST, 'bookExpense',FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 $bookPublisher = filter_input(INPUT_POST, 'publisher',FILTER_SANITIZE_STRING);
 $bookPublishDate = filter_input(INPUT_POST, 'bookPublished',FILTER_SANITIZE_STRING);
 $bookCategory =  filter_input(INPUT_POST, 'bookCategory',FILTER_SANITIZE_STRING);
@@ -23,7 +23,6 @@ if ($bookCategory === '') {
   returnCustomError('Valitse kirjakategoria!');
 }
 
-//615 width 908 height
 try{
 
   if (isset($_FILES['file'])) {
@@ -38,9 +37,9 @@ try{
         if (move_uploaded_file($_FILES['file']['tmp_name'],$path)) {
           $data = array('filename' => $filename,'type' => $type);
           echo json_encode($data);
-          
 
           $db = openDb();
+          
           $query = $db->prepare("INSERT INTO kirja(kirjaNimi, sivuNro, hinta, kustannus, kuvaus, kuva, julkaistu, julkaisijaNro) 
           VALUES (:kirjaNimi, :sivuNro, :hinta, :kustannus, :kuvaus, :kuva, :julkaistu, 
           (SELECT julkaisijaNro FROM julkaisija WHERE julkaisija= :julkaisija));
@@ -56,12 +55,13 @@ try{
           $query->bindValue(':sukunimi',$bookWriterLN,PDO::PARAM_STR);
           $query->bindValue(':kuva',$filename,PDO::PARAM_STR);
           $query->bindValue(':sivuNro',intval($bookPage),PDO::PARAM_INT);
-          $query->bindValue(':hinta',$bookPrice,PDO::PARAM_INT);
-          $query->bindValue(':kustannus',$bookExpense,PDO::PARAM_INT);
+          $query->bindValue(':hinta',$bookPrice,PDO::PARAM_STR); // PARAM_INT ei toimi desimaalien kanssa
+          $query->bindValue(':kustannus',$bookExpense,PDO::PARAM_STR);
           $query->bindValue(':julkaisija',$bookPublisher,PDO::PARAM_STR);
           $query->bindValue(':julkaistu',$bookPublishDate,PDO::PARAM_STR);
           $query->bindValue(':kategoria',$bookCategory,PDO::PARAM_STR);
           $query->execute();
+          
 
           foreach($extraCategories as $value) {
             if ($value !== '') {
@@ -87,5 +87,5 @@ try{
   }
 
 } catch(PDOException $pdoex) {
-returnError($pdoex);
+  returnError($pdoex);
 }
