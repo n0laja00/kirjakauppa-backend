@@ -27,28 +27,32 @@ yritys varchar(20)
 
  
 
-CREATE TABLE Tilaus ( 
+CREATE TABLE Tilaus (  
 
-tilausNro INT PRIMARY KEY AUTO_INCREMENT, 
+tilausNro INT PRIMARY KEY AUTO_INCREMENT,  
 
-asNro INT, 
+asNro INT,  
 
-tilauspvm DATETIME DEFAULT CURRENT_TIMESTAMP, 
+tilauspvm DATETIME DEFAULT CURRENT_TIMESTAMP,  
 
-toimitustapa CHAR(10), 
+toimitustapa CHAR(2) CHECK (toimitustapa IN ('pp','mh', 'p', 'lk')),  
 
-maksutapa CHAR(10), 
+postiNro VARCHAR(5), 
 
 postitmp VARCHAR(30), 
 
-postiNro VARCHAR(10), 
-
 lahiosoite VARCHAR(50),
 
-FOREIGN KEY (asNro) REFERENCES Asiakas (asNro) 
+maksutapa CHAR(10),  
 
+maksettu INT(1) DEFAULT 0 CHECK (maksettu IN ('0','1')), 
 
-); 
+toimitusTila CHAR(1) DEFAULT 'k' CHECK (toimitusTila IN ('k','l', 's', 'v')), 
+
+FOREIGN KEY (asNro) REFERENCES Asiakas (asNro)
+
+);  
+);  
 
  
 
