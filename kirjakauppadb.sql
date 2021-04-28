@@ -97,7 +97,6 @@ PRIMARY KEY (kirjaNro),
 FOREIGN KEY (julkaisijaNro) REFERENCES Julkaisija (julkaisijaNro) 
 
 ); 
-
  
 
 CREATE TABLE Arvostelu ( 
@@ -435,3 +434,18 @@ Values (1,2), (2, 6), (3,5), (4,7), (5,1), (6,4), (7,3), (4,1), (8,7), (9,1), (1
 INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Riku', "Loistava eepos", "Aivan eeppinen kirja, suosittelen kaikille lämpimästi. Mukaansa tempaava ja jännittävä. Jossain vaiheessa huomasin, että tästä oppiikin jotain! Myös lapsille soveltuva :)", 6, 5);
 
 INSERT INTO ARVOSTELU (nimimerkki, otsikko, teksti, kirjaNro, arvosana) VALUES ('Irmeli', "HUONO!", "En oppinut mitään ja päätä särkee", 6, 2);
+
+CREATE VIEW kuukaudenkirjat AS select DISTINCT(kirjaNimi), kirja.kirjaNro, sivuNro, hinta, kuvaus, kuva, YEAR(julkaistu) as 'vuosi', etunimi, sukunimi, julkaisija.julkaisija, kategoria.kategoria
+    from kirja
+        inner join kirjakategoria
+            on kirja.kirjaNro = kirjakategoria.kirjaNro
+        inner join kategoria
+            on kirjakategoria.kategoriaNro = kategoria.kategoriaNro
+        inner join julkaisija
+            on kirja.julkaisijaNro = julkaisija.julkaisijaNro
+        inner join kirjailijakirja
+            on kirja.kirjaNro = kirjailijakirja.kirjaNro
+        inner join kirjailija
+            on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
+    GROUP BY kirjaNimi
+    HAVING kirjaNimi IN ("Jannen Kirja", "Beautiful Nights", "Terror of London", "Katekismus");
