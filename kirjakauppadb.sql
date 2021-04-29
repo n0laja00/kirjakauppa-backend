@@ -38,7 +38,6 @@ toimitusTila CHAR(1) DEFAULT 'k' CHECK (toimitusTila IN ('k','l', 's', 'v')),
 FOREIGN KEY (asNro) REFERENCES Asiakas (asNro)
 
 );  
-);  
 
 
 CREATE TABLE Julkaisija( 
