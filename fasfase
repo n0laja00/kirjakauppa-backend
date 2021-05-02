@@ -1,6 +1,0 @@
-UPDATE kirja SET kirjaNimi = "Jannen kirja", sivuNro = 23, hinta = 5, kustannus = 6, kuvaus = "Juujoo", julkaistu = 11-11-2000,  julkaisijaNro =  (SELECT julkaisijaNro FROM julkaisija WHERE julkaisija= "Otava")
-  WHERE kirjaNro = 1;
-  UPDATE kirjailija SET etunimi = "Janne", sukunimi = "Lammela" WHERE kirjailijaNro = (SELECT kirjailijaNro FROM kirjailijakirja WHERE kirjaNro = 1); UPDATE kirjailijakirja SET kirjaNro = (SELECT kirjaNro FROM kirja WHERE kirjaNimi = "Jannen kirja"), kirjailijaNro = (SELECT kirjailijaNro FROM kirjailija
-      WHERE etunimi="Janne" AND sukunimi="Lammela");
-  DELETE FROM kirjakategoria WHERE kirjaNro = 1;
-  INSERT INTO kirjakategoria (kirjaNro, kategoriaNro) VALUES((SELECT kirjaNro FROM kirja WHERE kirjaNimi = "Jannen kirja"), (SELECT kategoriaNro FROM kategoria WHERE kategoria = "Oppikirjat"))
