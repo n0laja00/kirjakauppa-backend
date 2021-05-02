@@ -186,52 +186,52 @@ insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisij
 values ("Saariselän Ritarin Sapeli", 658, 319.90, 10.50, "Saariselän ritari on legendaarinen soturi. Hänen kuolemansa jätti kuningaskunnan ilman puolustajaa. Miten kuningaskunta pystyy vastustamaan nousevaa pimeää voimaa vuorten toisella puolella?", "kirja7.png", 1, "2004-1-21 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Pennun metsäkirja", 120, 12.00, 8.60, "Lapsien metsäkirja.", "eka.png", 1, "2014-09-29 00:00:00"); 
+values ("Pennun metsäkirja", 120, 12.00, 8.60, "Lapsien metsäkirja.", "kirja8.png", 1, "2014-09-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Katekismus", 500, 8.00, 8.60, "Lapsien metsäkirja.", "eka.png", 1, "2012-06-29 00:00:00"); 
+values ("Katekismus", 500, 8.00, 8.60, "Lapsien metsäkirja.", "kirja9.png", 1, "2012-06-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Taivaallinen paskamyrsky", 120, 12.00, 8.60, "Nyt on toimintaa!", "eka.png", 1, "2012-06-29 00:00:00"); 
+values ("Taivaallinen paskamyrsky", 120, 12.00, 8.60, "Nyt on toimintaa!", "kirja10.png", 1, "2012-06-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Biologia: Ihminen", 250, 30.00, 9.60, "Biologian kirja alakoululaisille", "eka.png", 1, "2019-01-29 00:00:00"); 
+values ("Biologia: Ihminen", 250, 30.00, 9.60, "Biologian kirja alakoululaisille", "kirja11.png", 1, "2019-01-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Punainen risti", 350, 20.00, 9.60, "Jännitys tiivistyy Starffordshiren kappelissa, jossa pappi löydettiin kuolleena.", "eka.png", 1, "2020-07-29 00:00:00"); 
+values ("Punainen risti", 350, 20.00, 9.60, "Jännitys tiivistyy Starffordshiren kappelissa, jossa pappi löydettiin kuolleena.", "kirja12.png", 1, "2020-07-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Maailman toisella puolen", 350, 15.00, 5.60, "Veeran aviomies siirtyi Austraaliaan töiden peräss. Miten Veera selviää, kun hänen rakastettunsa ei ole paikalla?", "eka.png", 1, "2020-07-29 00:00:00"); 
+values ("Maailman toisella puolen", 350, 15.00, 5.60, "Veeran aviomies siirtyi Austraaliaan töiden peräss. Miten Veera selviää, kun hänen rakastettunsa ei ole paikalla?", "kirja13.png", 1, "2020-07-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Kvanttikone: Jumalakompleksi", 550, 15.00, 5.60, "Kvanttikoneet ovat tulevaisuuden teknologiaa, mutta voiko tätä teknologiaa käyttää väärin? Voiko se johtaa sivilisaation musertumiseen?", "eka.png", 1, "2014-02-29 00:00:00"); 
+values ("Kvanttikone: Jumalakompleksi", 550, 15.00, 5.60, "Kvanttikoneet ovat tulevaisuuden teknologiaa, mutta voiko tätä teknologiaa käyttää väärin? Voiko se johtaa sivilisaation musertumiseen?", "kirja14.png", 1, "2014-02-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("tähtitaival: Jupiterin silmässä", 750, 25.00, 11.60, "Jupiterin silmässä on havaittu omituisia radioaaltoja ja ryhmä tutkijoita on lähetetty tutkimaan tapausta. Kaikki ei kuitenkaan mene suunnitelman mukaan...", "eka.png", 1, "2021-01-15 00:00:00"); 
+values ("tähtitaival: Jupiterin silmässä", 750, 25.00, 11.60, "Jupiterin silmässä on havaittu omituisia radioaaltoja ja ryhmä tutkijoita on lähetetty tutkimaan tapausta. Kaikki ei kuitenkaan mene suunnitelman mukaan...", "kirja15.png", 1, "2021-01-15 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Qing-dynastian Lohikäärme: Lohikäärmesoturi", 1150, 25.00, 11.60, "Qing-dynastialla on ollut pitkä ja sotaisa historia. Kolmannen suursodan tullessa valtakunta huomaa kuitenkin, että lohikäärme soturi on kadonnut. ", "eka.png", 1, "2020-09-30 00:00:00"); 
+values ("Qing-dynastian Lohikäärme: Lohikäärmesoturi", 1150, 25.00, 11.60, "Qing-dynastialla on ollut pitkä ja sotaisa historia. Kolmannen suursodan tullessa valtakunta huomaa kuitenkin, että lohikäärme soturi on kadonnut. ", "kirja16.png", 1, "2020-09-30 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Taivasalla: Tasavallan kirves", 500, 13.00, 6.60, "Kun tasavallan turvallisuus on vaakalaidalla, Tasavallan kirves saa tehtäväkseen palauttaa kaiken normaaliksi.", "eka.png", 1, "2011-02-30 00:00:00"); 
+values ("Taivasalla: Tasavallan kirves", 500, 13.00, 6.60, "Kun tasavallan turvallisuus on vaakalaidalla, Tasavallan kirves saa tehtäväkseen palauttaa kaiken normaaliksi.", "kirja17.png", 1, "2011-02-30 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Vuoden kauhutarinakokoelma", 666, 13.00, 6.66, "Kokoelma sisältää viisitoista vuoden suosituimmista kauhutarinoista!", "eka.png", 1, "2020-12-30 00:00:00"); 
+values ("Vuoden kauhutarinakokoelma", 666, 13.00, 6.66, "Kokoelma sisältää viisitoista vuoden suosituimmista kauhutarinoista!", "kirja18.png", 1, "2020-12-30 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Tsaarin Verilöyly", 150, 13.00, 3.30, "Pietarin kaduilla tapahtuu...", "eka.png", 1, "2016-12-30 00:00:00");
+values ("Tsaarin Verilöyly", 150, 13.00, 3.30, "Pietarin kaduilla tapahtuu...", "kirja19.png", 1, "2016-12-30 00:00:00");
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Pennun kokkikirja", 150, 10.00, 5.50, "Pennut kokkaa!", "eka.png", 1, "2011-04-30 00:00:00");  
+values ("Pennun kokkikirja", 150, 10.00, 5.50, "Pennut kokkaa!", "kirja20.png", 1, "2011-04-30 00:00:00");  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Kiiman piinaa", 250, 15.00, 5.50, "No Huhhuh!", "eka.png", 1, "2009-04-30 00:00:00");  
+values ("Kiiman piinaa", 250, 15.00, 5.50, "No Huhhuh!", "kirja21.png", 1, "2009-04-30 00:00:00");  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) 
-values ("10 tapaa olla laiska", 90, 15.00, 5.50, "Nyt laiskotellaan!", "eka.png", 1, "2004-04-30 00:00:00");  
+values ("10 tapaa olla laiska", 90, 15.00, 5.50, "Nyt laiskotellaan!", "kirja22.png", 1, "2004-04-30 00:00:00");  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Japanin Ulkopolitiikka", 90, 15.00, 5.50, "Japanin ulkopolitiikkaa", "eka.png", 1, "2020-04-30 00:00:00");  
+values ("Japanin Ulkopolitiikka", 90, 15.00, 5.50, "Japanin ulkopolitiikkaa", "kirja23.png", 1, "2020-04-30 00:00:00");  
 
 INSERT INTO kirjailija VALUES ("", "Aleksis", "Kivi"); 
 
