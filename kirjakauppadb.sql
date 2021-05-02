@@ -154,7 +154,7 @@ CREATE TABLE `user` (
   id int primary key auto_increment,
   fname varchar(50) not null,
   lname varchar(100) not null,
-  email varchar(100) not null,
+  email varchar(100) not null UNIQUE,
   password varchar(255) not null
 );
 
