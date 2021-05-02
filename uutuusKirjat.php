@@ -21,6 +21,7 @@ try{
             on kirjailijakirja.kirjailijaNro = kirjailija.kirjailijaNro
     GROUP BY kirjaNimi
     HAVING vuosi =" . date("Y") . '');
+    //Hakee kaikki kirjat, jotka on tänä vuonna julkaistu
 } catch (PDOException $pdoex) {
     returnError($pdoex); 
 }

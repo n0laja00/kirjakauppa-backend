@@ -168,7 +168,7 @@ insert into julkaisija (julkaisija, puhNro, email) values ('Simon & Schuter', 04
 
 INSERT INTO KIRJA VALUES ("Jannen Kirja", "", 390, 15.90, "", 8.90, "Tämä Jannen kirja on aika hyvä.", "kirja1.png", 1, "2021-11-01 00:00:00", ""); 
 
-insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) values ("Beautiful Nights", 450, 19.90, 8.50, "Kaukaisessa Pariisissa yöt kuumuvat yllävän lämpimiksi.", "kirja2.png", 2, "2013-04-09 00:00:00"); 
+insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu) values ("Beautiful Nights", 450, 19.90, 8.50, "Kaukaisessa Pariisissa yöt kuumuvat yllävän lämpimiksi.", "kirja2.png", 2, "2021-04-09 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 values ("Terror of London", 222, 12.90, 4.50, "Lontoon kaduilla vaanii julma olento.", "kirja3.png",  2, "2019-01-24 00:00:00"); 
@@ -201,10 +201,10 @@ insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisij
 values ("Punainen risti", 350, 20.00, 9.60, "Jännitys tiivistyy Starffordshiren kappelissa, jossa pappi löydettiin kuolleena.", "kirja12.png", 1, "2020-07-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Maailman toisella puolen", 350, 15.00, 5.60, "Veeran aviomies siirtyi Austraaliaan töiden peräss. Miten Veera selviää, kun hänen rakastettunsa ei ole paikalla?", "kirja13.png", 1, "2020-07-29 00:00:00"); 
+values ("Maailman toisella puolen", 350, 15.00, 5.60, "Veeran aviomies siirtyi Austraaliaan töiden peräss. Miten Veera selviää, kun hänen rakastettunsa ei ole paikalla?", "kirja13.png", 1, "2021-07-29 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Kvanttikone: Jumalakompleksi", 550, 15.00, 5.60, "Kvanttikoneet ovat tulevaisuuden teknologiaa, mutta voiko tätä teknologiaa käyttää väärin? Voiko se johtaa sivilisaation musertumiseen?", "kirja14.png", 1, "2014-02-29 00:00:00"); 
+values ("Kvanttikone: Jumalakompleksi", 550, 15.00, 5.60, "Kvanttikoneet ovat tulevaisuuden teknologiaa, mutta voiko tätä teknologiaa käyttää väärin? Voiko se johtaa sivilisaation musertumiseen?", "kirja14.png", 1, "2014-02-14 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 values ("tähtitaival: Jupiterin silmässä", 750, 25.00, 11.60, "Jupiterin silmässä on havaittu omituisia radioaaltoja ja ryhmä tutkijoita on lähetetty tutkimaan tapausta. Kaikki ei kuitenkaan mene suunnitelman mukaan...", "kirja15.png", 1, "2021-01-15 00:00:00"); 
@@ -216,13 +216,13 @@ insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisij
 values ("Taivasalla: Tasavallan kirves", 500, 13.00, 6.60, "Kun tasavallan turvallisuus on vaakalaidalla, Tasavallan kirves saa tehtäväkseen palauttaa kaiken normaaliksi.", "kirja17.png", 1, "2011-02-30 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Vuoden kauhutarinakokoelma", 666, 13.00, 6.66, "Kokoelma sisältää viisitoista vuoden suosituimmista kauhutarinoista!", "kirja18.png", 1, "2020-12-30 00:00:00"); 
+values ("Vuoden kauhutarinakokoelma", 666, 13.00, 6.66, "Kokoelma sisältää viisitoista vuoden suosituimmista kauhutarinoista!", "kirja18.png", 1, "2021-12-30 00:00:00"); 
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 values ("Tsaarin Verilöyly", 150, 13.00, 3.30, "Pietarin kaduilla tapahtuu...", "kirja19.png", 1, "2016-12-30 00:00:00");
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Pennun kokkikirja", 150, 10.00, 5.50, "Pennut kokkaa!", "kirja20.png", 1, "2011-04-30 00:00:00");  
+values ("Pennun kokkikirja", 150, 10.00, 5.50, "Pennut kokkaa!", "kirja20.png", 1, "2021-04-30 00:00:00");  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
 values ("Kiiman piinaa", 250, 15.00, 5.50, "No Huhhuh!", "kirja21.png", 1, "2009-04-30 00:00:00");  
@@ -231,7 +231,7 @@ insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisij
 values ("10 tapaa olla laiska", 90, 15.00, 5.50, "Nyt laiskotellaan!", "kirja22.png", 1, "2004-04-30 00:00:00");  
 
 insert into kirja (kirjaNimi, Sivunro, hinta, kustannus, kuvaus, kuva, julkaisijaNro, julkaistu)  
-values ("Japanin Ulkopolitiikka", 90, 15.00, 5.50, "Japanin ulkopolitiikkaa", "kirja23.png", 1, "2020-04-30 00:00:00");  
+values ("Japanin Ulkopolitiikka", 90, 15.00, 5.50, "Japanin ulkopolitiikkaa", "kirja23.png", 1, "2021-04-30 00:00:00");  
 
 INSERT INTO kirjailija VALUES ("", "Aleksis", "Kivi"); 
 
